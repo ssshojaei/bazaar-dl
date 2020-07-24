@@ -1,0 +1,34 @@
+{
+	"name": "bazaar-dl",
+	"version": "1.0.0",
+	"description": "Direct download applications from cafebazaar.ir",
+	"main": "index.js",
+	"bin": {
+		"bazaar_dl": "./index.js"
+	},
+	"preferGlobal": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ssshojaei/bazaar-dl"
+	},
+	"keywords": [
+		"cafebazaar",
+		"apk",
+		"bazaar",
+		"cafebazaar.ir"
+	],
+	"author": "SSShojaei",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/ssshojaei/bazaar-dl/issues"
+	},
+	"homepage": "https://github.com/ssshojaei/bazaar-dl#readme",
+	"dependencies": {
+		"axios": "^0.19.2",
+		"cheerio": "^1.0.0-rc.3"
+	},
+	"devDependencies": {}
+}
