@@ -1,2 +1,8 @@
-node_modules
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log
+npm-debug.log*
 yarn.lock
+pnpm-lock.yaml

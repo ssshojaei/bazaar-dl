@@ -1,14 +1,40 @@
 {
 	"name": "bazaar-dl",
-	"version": "1.0.0",
-	"description": "Direct download applications from cafebazaar.ir",
-	"main": "index.js",
-	"bin": {
-		"bazaar_dl": "./index.js"
+	"version": "2.0.0",
+	"description": "Generate direct APK download links from cafebazaar.ir",
+	"type": "module",
+	"main": "./dist/cli.js",
+	"types": "./dist/cli.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/cli.d.ts",
+			"import": "./dist/cli.js"
+		},
+		"./api": {
+			"types": "./dist/api.d.ts",
+			"import": "./dist/api.js"
+		},
+		"./utils": {
+			"types": "./dist/utils.d.ts",
+			"import": "./dist/utils.js"
+		}
 	},
-	"preferGlobal": true,
+	"bin": {
+		"bazaar-dl": "./dist/bin.js",
+		"bazaar_dl": "./dist/bin.js"
+	},
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"node": ">=18"
+	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "tsc",
+		"prepublishOnly": "npm run build",
+		"start": "node dist/bin.js",
+		"test": "tsx --test test/**/*.test.ts",
+		"typecheck": "tsc --noEmit"
 	},
 	"repository": {
 		"type": "git",
@@ -18,7 +44,8 @@
 		"cafebazaar",
 		"apk",
 		"bazaar",
-		"cafebazaar.ir"
+		"cafebazaar.ir",
+		"cli"
 	],
 	"author": "SSShojaei",
 	"license": "GPL-3.0-or-later",
@@ -27,8 +54,12 @@
 	},
 	"homepage": "https://github.com/ssshojaei/bazaar-dl#readme",
 	"dependencies": {
-		"axios": "^0.19.2",
-		"cheerio": "^1.0.0-rc.3"
+		"cheerio": "^1.1.0",
+		"commander": "^14.0.0"
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"@types/node": "^24.0.0",
+		"tsx": "^4.20.0",
+		"typescript": "^5.9.0"
+	}
 }
