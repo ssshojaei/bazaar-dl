@@ -20,10 +20,11 @@
 		}
 	},
 	"bin": {
-		"bazaar-dl": "./dist/bin.js",
-		"bazaar_dl": "./dist/bin.js"
+		"bazaar-dl": "bin/bazaar-dl.js",
+		"bazaar_dl": "bin/bazaar-dl.js"
 	},
 	"files": [
+		"bin",
 		"dist"
 	],
 	"engines": {
@@ -38,7 +39,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ssshojaei/bazaar-dl"
+		"url": "git+https://github.com/ssshojaei/bazaar-dl.git"
 	},
 	"keywords": [
 		"cafebazaar",
